@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShabbatMovieLauncher.Services
 {
-    internal class PCSleeper
+    public class PCSleeper
     {
         // Source - https://stackoverflow.com/a
         // Posted by fre0n, modified by community. See post 'Timeline' for change history

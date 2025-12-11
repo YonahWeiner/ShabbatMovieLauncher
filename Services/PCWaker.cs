@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace ShabbatMovieLauncher.Services
 {
-    internal class PCWaker
+    public class PCWaker
     {
         [DllImport("kernel32.dll")]
         public static extern SafeWaitHandle CreateWaitableTimer(IntPtr lpTimerAttributes, bool bManualReset, string lpTimerName);
