@@ -18,6 +18,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!--Movie's URL-->
         <TextBox
         Text="{Binding MovieUrl,FallbackValue=URL}"
         Grid.Row="0"
@@ -36,7 +37,7 @@
         Format="FullDateTime"
         Value="{Binding ScheduledDateTime}"/>
 
-        <!--Launch Button-->
+        <!--Schedule Button-->
         <Button 
         Content="Schedule"
         Grid.Row="1"

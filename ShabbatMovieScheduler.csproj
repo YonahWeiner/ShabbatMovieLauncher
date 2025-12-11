@@ -134,7 +134,11 @@
     <Compile Include="Services\PCSleeper.cs" />
     <Compile Include="Services\PCWaker.cs" />
     <Compile Include="Services\Scheduler.cs" />
+    <Compile Include="ViewModels\CountDownVM.cs" />
     <Compile Include="ViewModels\ScheduleItemVM.cs" />
+    <Compile Include="Views\CountDown.xaml.cs">
+      <DependentUpon>CountDown.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ScheduleItem.xaml.cs">
       <DependentUpon>ScheduleItem.xaml</DependentUpon>
     </Compile>
@@ -150,6 +154,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\CountDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ScheduleItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

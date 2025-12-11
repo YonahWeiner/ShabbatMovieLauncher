@@ -12,5 +12,8 @@
     <mah:MetroWindow.DataContext>
         <local:MainWindowVM />
     </mah:MetroWindow.DataContext>
-    <views:ScheduleItem/> 
+    <Grid>
+        <views:ScheduleItem Visibility="{Binding ScheduleItemVisibility, FallbackValue=Visible}"/>
+        <views:CountDown Visibility="{Binding CountDownVisibility, FallbackValue=Collapsed}"/>
+    </Grid>
 </mah:MetroWindow>
