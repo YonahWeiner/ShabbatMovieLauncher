@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using ShabbatMovieLauncher.Services;
 using System;
+using System.Security.Policy;
 using System.Windows;
 using System.Windows.Input;
 
@@ -50,16 +52,15 @@ namespace ShabbatMovieLauncher.ViewModels
         {
             if (ScheduledDateTime.HasValue)
             {
+                if (string.IsNullOrWhiteSpace(MovieUrl))
+                {
+                    MessageBox.Show("The url is invalid");
+                    return;
+                }
                 // schedule launch movie
                 _scheduler.ScheduleAction<string>(((DateTime)ScheduledDateTime).AddMinutes(1),
                     url =>
                     {
-                        if (string.IsNullOrWhiteSpace(url))
-                        {
-                            MessageBox.Show("The url is invalid");
-                            return;
-                        }
-
                         // wake up display if screen turn off. click to open windows drop down screen
                         PCDisplayWaker.WakeAndClick();  
                         
@@ -75,6 +76,7 @@ namespace ShabbatMovieLauncher.ViewModels
                         _movieLauncher.Launch(url);
 
                     }, MovieUrl);
+                WeakReferenceMessenger.Default.Send<ScheduleClicked>(new ScheduleClicked() { Url = MovieUrl, MovieTime = (DateTime)ScheduledDateTime });
             }
             else
             {
