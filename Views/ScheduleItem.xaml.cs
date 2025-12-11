@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ShabbatMovieLauncher.Services;
+using ShabbatMovieLauncher.ViewModels;
 
 namespace ShabbatMovieLauncher.Views
 {
@@ -23,6 +25,8 @@ namespace ShabbatMovieLauncher.Views
         public ScheduleItem()
         {
             InitializeComponent();
+            // Todo: resolve movie launcher to configuration in app.xaml.cs 
+            DataContext = new ScheduleItemVM(new ExternalBrowserMovieLauncher());
         }
     }
 }

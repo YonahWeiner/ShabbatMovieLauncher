@@ -12,44 +12,5 @@
     <mah:MetroWindow.DataContext>
         <local:MainWindowVM />
     </mah:MetroWindow.DataContext>
-    <Grid
-        Margin="10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <TextBox
-            Text="{Binding MovieUrl,FallbackValue=URL}"
-            Grid.Row="0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Width="600"
-            Height="40"
-            FontSize="25"/>
-
-        <!-- Schedule DatePicker-->
-        <xceed:DateTimePicker
-            Height="40"
-            Width="600"
-            Grid.Row="1"
-            FontSize="25"
-            Format="FullDateTime"
-            Value="{Binding ScheduledDateTime}"/>
-      
-        <!--Launch Button-->
-        <Button 
-            Content="Schedule"
-            Grid.Row="1"
-            Grid.Column="1"
-            Width="100" 
-            Height="40" 
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Command="{Binding SetScheduleButton}"/>
-    </Grid>
+    <views:ScheduleItem/> 
 </mah:MetroWindow>
