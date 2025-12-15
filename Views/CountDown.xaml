@@ -14,7 +14,7 @@
         
         <!--Count down text-->
             <TextBlock 
-            Text="{Binding TimeText,FallbackValue=01:23:45}"
+            Text="{Binding TimeText,FallbackValue=hh:mm:ss}"
             FontSize="50"
             Padding="20"
             VerticalAlignment="Center"
@@ -30,6 +30,7 @@
             Grid.Column="1"
             Content="&#x270E;"
             FontSize="30"
-            Foreground="blue"/>
+            Foreground="blue"
+            Command="{Binding EditButtonCommand}"/>
     </Grid>
 </UserControl>

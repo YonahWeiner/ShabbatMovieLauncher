@@ -35,10 +35,18 @@ namespace ShabbatMovieLauncher
             ScheduleItemVisibility = Visibility.Visible;
             CountDownVisibility = Visibility.Collapsed;
 
+            // Navigate to CountDown view on ScheduleClicked message
             WeakReferenceMessenger.Default.Register<ScheduleClicked>(this, (sender, args) =>
             {
                 CountDownVisibility = Visibility.Visible;
                 ScheduleItemVisibility = Visibility.Collapsed;
+            });
+
+            // Navigate to ScheduleItem view on EditClicked message
+            WeakReferenceMessenger.Default.Register<EditClicked>(this, (sender, args) =>
+            {
+                CountDownVisibility = Visibility.Collapsed;
+                ScheduleItemVisibility = Visibility.Visible;
             });
         }
     }

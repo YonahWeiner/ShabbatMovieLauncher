@@ -13,7 +13,13 @@
         <local:MainWindowVM />
     </mah:MetroWindow.DataContext>
     <Grid>
-        <views:ScheduleItem Visibility="{Binding ScheduleItemVisibility, FallbackValue=Visible}"/>
-        <views:CountDown Visibility="{Binding CountDownVisibility, FallbackValue=Collapsed}"/>
+        <Grid
+            Visibility="{Binding ScheduleItemVisibility}">
+            <views:ScheduleItem/>
+        </Grid>
+        <Grid
+            Visibility="{Binding CountDownVisibility}">
+            <views:CountDown/>
+        </Grid>
     </Grid>
 </mah:MetroWindow>
