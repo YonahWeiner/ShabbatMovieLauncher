@@ -128,7 +128,7 @@
     </ApplicationDefinition>
     <Compile Include="MainWindowVM.cs" />
     <Compile Include="Services\Messages.cs" />
-    <Compile Include="Services\MovieLauncher\ExternalBrowserMovieLauncher.cs" />
+    <Compile Include="Services\MovieLauncher\ChromeMovieLauncher.cs" />
     <Compile Include="Services\MovieLauncher\IMovieLauncher.cs" />
     <Compile Include="Services\MovieLauncher\WebViewMovieLauncher.cs" />
     <Compile Include="Services\PCDisplayWaker.cs" />

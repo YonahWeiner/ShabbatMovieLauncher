@@ -24,6 +24,8 @@ namespace ShabbatMovieLauncher.Services.MovieLauncher
                         MovieUrl = new Uri(url)
                     } };
                     browserWindow.Owner = App.Current.MainWindow;
+                    //browserWindow.Topmost = true; // consider to keep. it keeps window over all other apps.
+                                                  // seems good for shabbat, but quite annoying in general
                     browserWindow.Show();
                     browserWindow.Activate(); // force focus
                 });

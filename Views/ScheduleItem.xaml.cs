@@ -27,7 +27,7 @@ namespace ShabbatMovieLauncher.Views
         {
             InitializeComponent();
             // Todo: resolve movie launcher to configuration in app.xaml.cs 
-            DataContext = new ScheduleItemVM(new WebViewMovieLauncher());
+            DataContext = new ScheduleItemVM(new ChromeMovieLauncher());
         }
     }
 }

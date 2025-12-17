@@ -66,11 +66,6 @@ namespace ShabbatMovieLauncher.ViewModels
                         
                         // give time for computer to react
                         System.Threading.Thread.Sleep(1000); 
-                        
-                        // hide main window not to block the movie. right now this leaves the exe running, but shutting it down
-                        // causes unpredictable behaivior if movie is external browser. todo: fix
-                        //App.Current.Dispatcher.Invoke(() => App.Current.MainWindow.Hide());                                      
-                        //System.Threading.Thread.Sleep(1000);
 
                         // launch movie
                         _movieLauncher.Launch(url);
