@@ -60,12 +60,6 @@ namespace ShabbatMovieLauncher.ViewModels
         private void _timer_Tick(object sender, EventArgs e)
         {
             TimeSpan timeDiff = DateTime.Now - _movieSchedule;
-            if (timeDiff.TotalSeconds >= 0)
-            {
-                TimeText = "Movie Begins Soon...";
-                return;
-            }
-
             TimeText = (-1 * timeDiff.Hours).ToString("00") + ":"
                 + (-1 * timeDiff.Minutes).ToString("00") + ":" 
                 + (-1 * timeDiff.Seconds).ToString("00");

@@ -1,4 +1,7 @@
-﻿using Microsoft.Web.WebView2.WinForms;
+﻿using MahApps.Metro.Controls;
+using Microsoft.Web.WebView2.WinForms;
+using ShabbatMovieLauncher.ViewModels;
+using ShabbatMovieLauncher.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +16,19 @@ namespace ShabbatMovieLauncher.Services.MovieLauncher
         {
             //option 1: raise event and main window handles it in its own window
             //option 2: make a new window and open it there
-            
+           
+            App.Current.Invoke(() =>
+                {
+                    BrowserMovieWindow browserWindow = new BrowserMovieWindow() { DataContext = new BrowserMovieWindowVM()
+                    {
+                        MovieUrl = new Uri(url)
+                    } };
+                    browserWindow.Owner = App.Current.MainWindow;
+                    browserWindow.Show();
+                    browserWindow.Activate(); // force focus
+                });
+
         }
     }
+    
 }

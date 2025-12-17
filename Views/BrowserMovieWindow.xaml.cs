@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ShabbatMovieLauncher.Services;
-using ShabbatMovieLauncher.Services.MovieLauncher;
-using ShabbatMovieLauncher.ViewModels;
 
 namespace ShabbatMovieLauncher.Views
 {
     /// <summary>
-    /// Interaction logic for ScheduleItem.xaml
+    /// Interaction logic for BrowserMovieWindow.xaml
     /// </summary>
-    public partial class ScheduleItem : UserControl
+    public partial class BrowserMovieWindow : Window
     {
-        public ScheduleItem()
+        public BrowserMovieWindow()
         {
             InitializeComponent();
-            // Todo: resolve movie launcher to configuration in app.xaml.cs 
-            DataContext = new ScheduleItemVM(new WebViewMovieLauncher());
         }
     }
 }

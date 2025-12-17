@@ -45,7 +45,7 @@ namespace ShabbatMovieLauncher.ViewModels
             // initialize
             _movieLauncher = movieLauncher;
             SetScheduleButton = new RelayCommand(ExecuteSetScheduleButton);
-            ScheduledDateTime = DateTime.Now.AddSeconds(70);
+            ScheduledDateTime = DateTime.Now.AddSeconds(10);
         }
 
         private async void ExecuteSetScheduleButton()
@@ -58,7 +58,7 @@ namespace ShabbatMovieLauncher.ViewModels
                     return;
                 }
                 // schedule launch movie
-                _scheduler.ScheduleAction<string>(((DateTime)ScheduledDateTime).AddMinutes(1),
+                _scheduler.ScheduleAction<string>(((DateTime)ScheduledDateTime),
                     url =>
                     {
                         // wake up display if screen turn off. click to open windows drop down screen
@@ -69,8 +69,8 @@ namespace ShabbatMovieLauncher.ViewModels
                         
                         // hide main window not to block the movie. right now this leaves the exe running, but shutting it down
                         // causes unpredictable behaivior if movie is external browser. todo: fix
-                        App.Current.Dispatcher.Invoke(() => App.Current.MainWindow.Hide());                                      
-                        System.Threading.Thread.Sleep(1000);
+                        //App.Current.Dispatcher.Invoke(() => App.Current.MainWindow.Hide());                                      
+                        //System.Threading.Thread.Sleep(1000);
 
                         // launch movie
                         _movieLauncher.Launch(url);

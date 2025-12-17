@@ -135,8 +135,12 @@
     <Compile Include="Services\PCSleeper.cs" />
     <Compile Include="Services\PCWaker.cs" />
     <Compile Include="Services\Scheduler.cs" />
+    <Compile Include="ViewModels\BrowserMovieWindowVM.cs" />
     <Compile Include="ViewModels\CountDownVM.cs" />
     <Compile Include="ViewModels\ScheduleItemVM.cs" />
+    <Compile Include="Views\BrowserMovieWindow.xaml.cs">
+      <DependentUpon>BrowserMovieWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CountDown.xaml.cs">
       <DependentUpon>CountDown.xaml</DependentUpon>
     </Compile>
@@ -155,6 +159,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\BrowserMovieWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CountDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
