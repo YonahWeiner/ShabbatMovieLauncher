@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+#Test DVD folder and Files
+DVD Sample/
+*.VOB
+*.IFO
+*.BUP
