@@ -1,12 +1,7 @@
 ﻿using MahApps.Metro.Controls;
-using Microsoft.Web.WebView2.WinForms;
 using ShabbatMovieLauncher.ViewModels;
 using ShabbatMovieLauncher.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShabbatMovieLauncher.Services.MovieLauncher
 {

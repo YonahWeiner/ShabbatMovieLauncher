@@ -1,4 +1,5 @@
-﻿using ShabbatMovieLauncher.ViewModels;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ShabbatMovieLauncher.ViewModels;
 using System.Windows.Controls;
 
 
@@ -12,7 +13,7 @@ namespace ShabbatMovieLauncher.Views
         public CountDown()
         {
             InitializeComponent();
-            DataContext = new CountDownVM();
+            DataContext = App.Current.Services.GetRequiredService<CountDownVM>(); ;
         }
     }
 }

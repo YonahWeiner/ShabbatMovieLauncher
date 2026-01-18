@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace ShabbatMovieLauncher.Services
 {
-    public class Scheduler
+    public class Scheduler : IScheduler
     {
         Timer _timer;
         public void ScheduleAction<T>(DateTime dateTime, Action<T> action, T args)

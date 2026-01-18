@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using ShabbatMovieLauncher.Services;
 using System;
-using System.Security.Policy;
 using System.Windows;
 using System.Windows.Input;
 
@@ -36,14 +35,15 @@ namespace ShabbatMovieLauncher.ViewModels
 
         #region Private
         // scheduler to set the time the movie is to be played
-        private Scheduler _scheduler = new Scheduler();
+        private IScheduler _scheduler;
         private IMovieLauncher _movieLauncher;
         #endregion
 
-        public ScheduleItemVM(IMovieLauncher movieLauncher) 
+        public ScheduleItemVM(IMovieLauncher movieLauncher, IScheduler scheduler) 
         {
             // initialize
             _movieLauncher = movieLauncher;
+            _scheduler = scheduler;
             SetScheduleButton = new RelayCommand(ExecuteSetScheduleButton);
             ScheduledDateTime = DateTime.Now.AddSeconds(10);
         }

@@ -1,5 +1,7 @@
 ﻿
 
+using Microsoft.Extensions.DependencyInjection;
+
 namespace ShabbatMovieLauncher
 {
     /// <summary>
@@ -7,11 +9,10 @@ namespace ShabbatMovieLauncher
     /// </summary>
     public partial class MainWindow 
     {
-
-        public MainWindowVM ViewModel { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = App.Current.Services.GetRequiredService<MainWindowVM>();
         }
     }
 }

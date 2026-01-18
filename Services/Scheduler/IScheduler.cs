@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ShabbatMovieLauncher.Services
 {
-    public sealed class ScheduleClicked 
+    public interface IScheduler
     {
-        public DateTime MovieTime { get; set; }
-        public string Url { get; set; }
+        void ScheduleAction<T>(DateTime dateTime, Action<T> action, T args);
     }
-    public sealed class EditClicked { }
 }

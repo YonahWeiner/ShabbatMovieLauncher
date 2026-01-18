@@ -1,20 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using ShabbatMovieLauncher.Services;
-using ShabbatMovieLauncher.Services.MovieLauncher;
+﻿using Microsoft.Extensions.DependencyInjection;
 using ShabbatMovieLauncher.ViewModels;
+using System.Windows.Controls;
 
 namespace ShabbatMovieLauncher.Views
 {
@@ -27,7 +13,7 @@ namespace ShabbatMovieLauncher.Views
         {
             InitializeComponent();
             // Todo: resolve movie launcher to configuration in app.xaml.cs 
-            DataContext = new ScheduleItemVM(new ChromeMovieLauncher());
+            DataContext = App.Current.Services.GetRequiredService<ScheduleItemVM>();
         }
     }
 }
